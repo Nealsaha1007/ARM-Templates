@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2017-05-10",
+      "name": "2vmsLB",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://absahainfra.blob.core.windows.net/infra/azuredeployfor2VM.json?sp=r&st=2020-03-29T13:27:49Z&se=2020-03-29T21:27:49Z&spr=https&sv=2019-02-02&sr=b&sig=Jz3BqMdH%2B4B7wS8IRD72cU27ghcyzAVGgJfAxE25Lqs%3D",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2017-05-10",
+      "name": "sqlserver",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://absahainfra.blob.core.windows.net/infra/azuredeploySql.json?sp=rcwd&st=2020-03-29T13:28:37Z&se=2020-03-29T21:28:37Z&spr=https&sv=2019-02-02&sr=b&sig=GBz%2F8PuunvrBlheLn9gtIuMonv0rMc8nNVi%2BtF8sP8I%3D",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    }
+  ],
+  "outputs": {
+  }
+}
